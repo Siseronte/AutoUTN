@@ -1,0 +1,366 @@
+/* Paleta de colores inspirada en UTN */
+:root {
+    --utn-azul-oscuro: #003366;
+    --utn-azul-medio: #0055A4;
+    --utn-verde: #4CAF50; /* Verde para selecciones o confirmaciones */
+    --utn-gris-claro: #f0f0f0;
+    --utn-texto: #333;
+    --blanco: #ffffff;
+}
+
+/* Reseteo básico y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #e4f0fe;
+    color: var(--utn-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Cabecera */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--utn-gris-claro);
+    border-bottom: 2px solid var(--utn-azul-oscuro);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    font-weight: 600;
+    color: var(--utn-azul-oscuro);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    border-color: var(--utn-azul-medio);
+}
+
+.btn-login {
+    background-color: var(--utn-azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--utn-azul-medio);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--utn-azul-oscuro);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Contenido Principal */
+.main-content {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+.content-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-column h1 {
+    color: var(--utn-azul-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+.content-column p {
+    margin-bottom: 1rem;
+}
+
+.image-column {
+    flex: 1;
+    display: flex;    
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center;
+}
+
+.image-column img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Pie de página */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: var(--utn-gris-claro);
+    border-top: 1px solid #ddd; 
+}
+
+.legal p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--utn-azul-oscuro);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--utn-azul-medio);
+}
+
+/* Estilos para el popup de login */
+.login-popup {
+    position: absolute;
+    top: 80px; /* Ajustar según la altura del header */
+    right: 2rem;
+    width: 300px;
+    padding: 1.5rem;
+    background-color: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.login-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.login-popup h3 {
+    margin-bottom: 1rem;
+    color: var(--utn-azul-oscuro);
+    text-align: center;
+}
+
+.login-popup .form-group {
+    margin-bottom: 1rem;
+}
+
+.login-popup .form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.login-popup .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-popup .btn-submit {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--utn-azul-oscuro);
+    color: var(--blanco);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-popup .btn-submit:hover {
+    background-color: var(--utn-azul-medio);
+}
+
+.login-popup .register-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-popup .register-link a {
+    color: var(--utn-azul-medio);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Caja de login estática para el index */
+.login-box {
+    background-color: var(--blanco);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 320px;
+}
+
+.login-box h3 {
+    color: var(--utn-azul-oscuro);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-box .form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.login-box .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.login-box .form-group input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.login-box .btn-submit {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--utn-azul-oscuro);
+    color: var(--blanco);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Link para registrarse en móvil (oculto por defecto) */
+.mobile-register-link {
+    display: none;
+}
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Tablets y móviles en horizontal */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
+
+/* Móviles en vertical */
+@media (max-width: 768px) {
+    .header {
+        position: relative;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--utn-gris-claro);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        z-index: 999; /* Asegura que el menú esté sobre otros elementos como el mapa */
+    }
+
+    .nav.active {
+        max-height: 250px; /* Altura suficiente para los items */
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .auth-buttons {
+        display: none; /* Opcional: moverlo dentro del menú hamburguesa */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mostrar el link de registro en móvil */
+    .mobile-register-link {
+        display: block;
+        text-align: center;
+        margin-top: 1.5rem;
+        font-weight: 600;
+        color: var(--utn-azul-medio);
+    }
+}
