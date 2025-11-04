@@ -1,22 +1,22 @@
-<!--  --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoUTN - Gestión de Estacionamiento</title>
+    <title>Dashboard - AutoUTN</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <a href="index.html">
+            <a href="dashboard.html">
                 <img src="img/logo.png" alt="Logo AutoUTN">
             </a>
         </div>
         <nav class="nav">
             <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="reserva.html">Reserva</a></li>
                 <li><a href="mis-autos.html">Mis Autos</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
@@ -24,7 +24,8 @@
             </ul>
         </nav>
         <div class="auth-buttons">
-            <a href="registro.html" class="btn-login">Registrarse</a>
+            <span class="user-name">Cargando...</span>
+            <button class="btn-login logout-btn">Cerrar Sesión</button>
         </div>
         <button class="hamburger" aria-label="Abrir menú">
             <span class="bar"></span>
@@ -34,24 +35,24 @@
     </header>
 
     <main class="main-content">
-        <section class="image-column">
-            <img src="img/AutoUTN.jpg" alt="Imagen representativa del servicio AutoUTN">
-        </section>
         <section class="content-column">
-            <div class="login-box">
-                <form id="static-login-form">
-                    <h3>Iniciar Sesión</h3>
-                    <div class="form-group">
-                        <label for="legajo-static">Legajo</label>
-                        <input type="text" id="legajo-static" name="legajo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password-static">Contraseña</label>
-                        <input type="password" id="password-static" name="password" required>
-                    </div>
-                    <button type="submit" class="btn-submit">Ingresar</button>
-                </form>
-                <p class="mobile-register-link"><a href="registro.html">Crear cuenta</a></p>
+            <div style="text-align: center; padding: 2rem;">
+                <h1>¡Bienvenido al Dashboard!</h1>
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 2rem 0;">
+                    <h3>Información del Usuario</h3>
+                    <p><strong>Nombre:</strong> <span class="user-name">Cargando...</span></p>
+                    <p><strong>Legajo:</strong> <span class="user-legajo">Cargando...</span></p>
+                    <p><strong>Email:</strong> <span class="user-email">Cargando...</span></p>
+                    <p><strong>Tokens disponibles:</strong> <span class="user-tokens">Cargando...</span></p>
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="reserva.html" class="btn-login" style="text-decoration: none;">
+                        <i class="fas fa-car"></i> Hacer Reserva
+                    </a>
+                    <a href="ubicacion.html" class="btn-login" style="text-decoration: none;">
+                        <i class="fas fa-map-marker-alt"></i> Ver Ubicación
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -69,8 +70,8 @@
     </footer>
 
     <script src="js/auth.js"></script>
-    <script src="js/guestProtection.js"></script>
     <script src="js/ui.js"></script>
+    <script src="js/pageProtection.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

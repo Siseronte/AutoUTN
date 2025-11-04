@@ -1,10 +1,11 @@
-<!--  --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoUTN - Gestión de Estacionamiento</title>
+    <title>AutoUTN - Ubicación</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/ubicacion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
@@ -34,26 +35,14 @@
     </header>
 
     <main class="main-content">
-        <section class="image-column">
-            <img src="img/AutoUTN.jpg" alt="Imagen representativa del servicio AutoUTN">
-        </section>
-        <section class="content-column">
-            <div class="login-box">
-                <form id="static-login-form">
-                    <h3>Iniciar Sesión</h3>
-                    <div class="form-group">
-                        <label for="legajo-static">Legajo</label>
-                        <input type="text" id="legajo-static" name="legajo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password-static">Contraseña</label>
-                        <input type="password" id="password-static" name="password" required>
-                    </div>
-                    <button type="submit" class="btn-submit">Ingresar</button>
-                </form>
-                <p class="mobile-register-link"><a href="registro.html">Crear cuenta</a></p>
+        <div class="location-container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.5647439257086!2d-58.60793981076373!3d-34.64043798965808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb881cd11a159%3A0x3c6312efcfe9783f!2sLos%20Andes%202054%2C%20B1706BSH%20Haedo%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1760655083756!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de AutoUTN en Haedo"></iframe>
             </div>
-        </section>
+            <p class="address-text">
+                Los Andes 2054, Haedo, Provincia de Buenos Aires
+            </p>
+        </div>
     </main>
 
     <footer class="footer">
@@ -69,7 +58,6 @@
     </footer>
 
     <script src="js/auth.js"></script>
-    <script src="js/guestProtection.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
 </body>
